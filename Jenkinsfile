@@ -6,6 +6,7 @@ pipeline {
 	GIT_REPO_URL = 'https://github.com/rajarvinth/Capstone.git'
 	GIT_CREDENTIALS_ID = 'gitcreds'
       }
+    stages {
 	stage('Build') {
 	    steps {
 	       script {
@@ -14,6 +15,7 @@ pipeline {
 		}
 	     }
 	  }
+    }
 	    steps {
 	       script {
 		   // Clean up previous deployments
