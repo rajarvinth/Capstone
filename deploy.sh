@@ -10,12 +10,12 @@ docker-compose down
 docker login -u $DOCKER_USERNAME --password $DOCKER_PASSWORD
 
 #Docker Prod step
-if [[ $BRANCH_NAME == "main" ]]; then
+if [[ "$BRANCH_NAME" == "main" ]]; then
         ./build.sh
         docker tag capdockerimg arvinthraj/prodcap1:v1
         docker push arvinthraj/prodcap1:v1
 
-elif [[ $BRANCH_NAME == "origin/dev" ]]; then
+elif [[ "$BRANCH_NAME" == "origin/dev" ]]; then
         ./build.sh
         docker tag capdockerimg arvinthraj/devcap1:v1
         docker push arvinthraj/devcap1:v1
