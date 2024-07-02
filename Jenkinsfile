@@ -16,8 +16,8 @@ pipeline {
 	     }
 	  }
     }
-	stage('deploy') {
-	    steps {
+	
+	steps {
 	       script {
 		   // Clean up previous deployments
 		   sh 'docker-compose down'
@@ -27,7 +27,6 @@ pipeline {
 		    sh "./deploy.sh ${env.BRANCH_NAME}"
 		}
 	     }
-	  }
 
 	     post {
 		always {
