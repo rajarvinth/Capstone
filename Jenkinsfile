@@ -17,7 +17,6 @@ pipeline {
 	  }
     }
 	
-	steps {
 	       script {
 		   // Clean up previous deployments
 		   sh 'docker-compose down'
