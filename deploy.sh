@@ -10,14 +10,14 @@ docker-compose down
 docker login -u $DOCKER_USERNAME --password $DOCKER_PASSWORD
 
 #Docker Prod step
-if [[ "$GIT_BRANCH" == "dev" ]]; then
+
         ./build.sh
         docker tag capdockerimg arvinthraj/prodcap1:v1
         docker push arvinthraj/prodcap1:v1
 
-elif [[ "$GIT_BRANCH" == "main" ]]; then
+
         ./build.sh
         docker tag capdockerimg arvinthraj/devcap1:v1
         docker push arvinthraj/devcap1:v1
 
-fi
+
