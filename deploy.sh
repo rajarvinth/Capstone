@@ -1,6 +1,6 @@
 #Fetching the current Git branch
 GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-echo "Current Git Branch: ${BRANCH_NAME}"
+echo "Current Git Branch: ${GIT_BRANCH}"
 
 
 #Stop and remove existing containers
@@ -19,8 +19,5 @@ elif [[ "$GIT_BRANCH" == "dev" ]]; then
         ./build.sh
         docker tag capdockerimg arvinthraj/devcap1:v1
         docker push arvinthraj/devcap1:v1
-        
-else    
-        echo "Deployment Failed: Unsupported branch ${BRANCH_NAME}"
 
 fi
