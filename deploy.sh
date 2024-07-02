@@ -7,7 +7,7 @@ echo "Current Git Branch: ${BRANCH_NAME}"
 docker-compose down
 
 #Docker login
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
 
 #Docker Prod step
 if [[ $BRANCH_NAME == "main" ]]; then
@@ -15,7 +15,7 @@ if [[ $BRANCH_NAME == "main" ]]; then
         docker tag capdockerimg arvinthraj/prodcap1:v1
         docker push arvinthraj/prodcap1:v1
 
-elif [[ $BRANCH_NAME == "dev" ]]; then
+elif [[ $BRANCH_NAME == "origin/dev" ]]; then
         ./build.sh
         docker tag capdockerimg arvinthraj/devcap1:v1
         docker push arvinthraj/devcap1:v1
