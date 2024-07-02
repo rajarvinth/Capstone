@@ -10,12 +10,12 @@ docker-compose down
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 #Docker Prod step
-if [[ "${BRANCH_NAME}" == "Prod" ]]; then
+if [[ $BRANCH_NAME == "main" ]]; then
         ./build.sh
         docker tag capdockerimg arvinthraj/prodcap1:v1
         docker push arvinthraj/prodcap1:v1
 
-elif [[ "${BRANCH_NAME}" == "Dev" ]]; then
+elif [[ $BRANCH_NAME == "dev" ]]; then
         ./build.sh
         docker tag capdockerimg arvinthraj/devcap1:v1
         docker push arvinthraj/devcap1:v1
