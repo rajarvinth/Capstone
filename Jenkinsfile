@@ -16,6 +16,7 @@ pipeline {
 	     }
 	  }
     }
+	stage('deploy') {
 	    steps {
 	       script {
 		   // Clean up previous deployments
