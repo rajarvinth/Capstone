@@ -5,7 +5,7 @@
 docker-compose down
 
 #Docker login
-docker login -u arvinthraj --password dckr_pat_lb8Zhm3n6C4jiByNz-3wHUggD8s
+docker login -u arvinthraj --password dckr_pat_Mb9SYa6cILLou8FmsKcn4GUPgTA
 
 #Docker Prod step
     # Build your project
