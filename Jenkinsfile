@@ -28,19 +28,5 @@ pipeline {
 		}
 	     }
 	}
-	     post {
-		always {
-		   script {
-			echo 'Cleaning up...'
-			sh 'docker logout'
-		   }
-		}
-
-		failure {
-		    script {
-			echo 'Deployment failed.'
-		}
-	     }
-	  }
-    }	    
+    }
 }
