@@ -2,7 +2,7 @@
 FROM nginx:latest
 
 # Copy static website files to the container
-COPY . /usr/share/nginx/html
+COPY build/ /usr/share/nginx/html
 
 # Expose port 80 to allow external access
 EXPOSE 80
